@@ -6,14 +6,14 @@
 
 public class ExponentialOddonacci {
 	public static void main(String[] args) {
-		for(int i=5; i<200; i=i+5) {
+		for(long i=5; i<200; i=i+5) {
 			long startTime = System.nanoTime();
-			int result = expOddonacci(i);
+			long result = expOddonacci(i);
 			long endTime = System.nanoTime();
-			System.out.println(String.format("%-13s","Oddonacci("+i+")")+" = "+String.format("%-11d",result)+" | Duration: "+ String.format("%11.7f",((endTime-startTime)/1000000000f))+" seconds");
+			System.out.println(String.format("%-13s","Oddonacci("+i+")")+" = "+String.format("%-19d",result)+" | Duration: "+ String.format("%12.7f",((endTime-startTime)/1000000000f))+" seconds");
 		}
 	}
-	public static int expOddonacci(int k) {
+	public static long expOddonacci(long k) {
 		if(k<=3) {
 			return 1;
 		} else {
