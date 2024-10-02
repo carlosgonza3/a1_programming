@@ -1,0 +1,10 @@
+Oddonacci(5)  = 5                   | Duration:    0.0000019 seconds
+Oddonacci(10) = 105                 | Duration:    0.0000075 seconds
+Oddonacci(15) = 2209                | Duration:    0.0001459 seconds
+Oddonacci(20) = 46499               | Duration:    0.0004040 seconds
+Oddonacci(25) = 978793              | Duration:    0.0028061 seconds
+Oddonacci(30) = 20603361            | Duration:    0.0429820 seconds
+Oddonacci(35) = 433695873           | Duration:    0.8925680 seconds
+Oddonacci(40) = 9129195487          | Duration:   18.5267811 seconds
+Oddonacci(45) = 192167404461        | Duration:  390.6330566 seconds
+Oddonacci(50) = 4045078385041       | Duration: 8195.8730637 seconds
