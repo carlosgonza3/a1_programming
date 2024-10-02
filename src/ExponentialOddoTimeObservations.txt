@@ -1,0 +1,19 @@
+Observations about the time measurements of ExponentialOddonacci algorithm:
+
+The ExponentialOddonacci algorithm is of time complexity O(3^n).
+This is because, for every iteration of the algorithm for n > 3, the algorithm makes 3 recursive calls.
+This makes for an inefficient algorithm, to say the least. The Java implementation of this algorithm takes milliseonds to
+calculate the first 6 or so oddonacci results, and the amount of time quickly grows to more than two hours for the 10th
+iteration which calculates Oddonacci(50). The Java implementation of this algorithm ran for close to 3 hours in total before
+being shut down manually because of other scheduled activities. The Java implementation only calculated up to Oddonacci(50)
+in that time. Please see ExponentialOddoOut.txt for the exact durations.
+
+--------------------------------------------------------------------------------------------------------
+ExponentialOddonacci PseudoCode:
+
+INPUT:	Non-negative integer k.
+OUTPUT:	The k'th Oddonnacci number O(k).
+
+ALGORITHM:
+	If k <= 3, return 1;
+	Else return Oddonacci(k - 1) + Oddonacci(k - 2) + Oddonacci(k - 3);
