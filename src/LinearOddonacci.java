@@ -1,31 +1,19 @@
-/*
-    Pseudocode for calculating Oddonacci Numbers using Linear time:
-
-    Function LinearOddonacci(k):
-        if (k<=3)
-            return (1, 1, 1)
-        else
-            (current, previous, secondPrevious) <- LinearOddonacci(k-1)
-            return (current+previous+secondPrevious, current, previous)
- */
-
-public class Main {
+// Linear Oddonacci Algorithm
+public class LinearOddonacci {
 
     public static void main(String[] args) {
 
-        long totalStartTime = System.currentTimeMillis();
-
+        // Loop that starts at 5, and increments by steps oof 5, stops until 200
         for (int i=5; i<=200; i+=5) {
-            long startTime = System.currentTimeMillis();
+            // Used for calculating time taken to calculate Oddonacci(i)
+            long startTime = System.nanoTime();
+            // Calls the algorithm for finding Oddonacci(i) and stores in object of type Triple
             Triple oddonacci = LinearOddonacci(i);
-            long endTime = System.currentTimeMillis();
-            long elapsed = endTime - startTime;
-            System.out.println("Oddonacci("+i+"): "+oddonacci+" \t | \t Time elapsed: "+elapsed);
+            // Used for calculating time taken to calculate Oddonacci(i)
+            long endTime = System.nanoTime();
+            // Prints results into terminal
+            System.out.println(String.format("%-13s","Oddonacci("+i+")")+" = "+String.format("%-11s",oddonacci)+" | Duration: "+ String.format("%11.7f",((endTime-startTime)/1000000000f))+" seconds");
         }
-        long totalEndTime = System.currentTimeMillis();
-        long totalElapsed = totalEndTime - totalStartTime;
-        System.out.println("Total Time Elapsed: "+totalElapsed);
-
     }
 
     // Linear Oddonacci Algorithm -> input k is the Oddonacci number to calculate.
@@ -36,7 +24,7 @@ public class Main {
         if (k<=3) {
             return new Triple(1, 1, 1);
         }
-        // Recursive call: Returns a Triple t where it includes (new Calculated Oddonacci number, current oddonacci number, previous oddonacci number)
+        // Recursive call: Returns a LinearOddonacci.Triple t where it includes (new Calculated Oddonacci number, current oddonacci number, previous oddonacci number)
         else {
             Triple t = LinearOddonacci(k-1);
             return new Triple(t.current+ t.prev+ t.prevprev, t.current, t.prev);
@@ -47,7 +35,7 @@ public class Main {
 // Class used to return an object with 3 numbers
 class Triple {
 
-    // Triple Member
+    // LinearOddonacci.Triple Member
     long current, prev, prevprev;
 
     // Constructor
@@ -57,7 +45,7 @@ class Triple {
         this.prevprev = prevprev;
     }
 
-    // To String method to display Triple elements
+    // To String method to display LinearOddonacci.Triple elements
     @Override
     public String toString() {
         return "("+current+", "+prev+", "+prevprev+")";
